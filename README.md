@@ -9,5 +9,5 @@ first name: lakkhanan
 last name: issara
 student's code: 620610805
 
-heroku :
+heroku : https://quiz441-620610805.herokuapp.com/
 
