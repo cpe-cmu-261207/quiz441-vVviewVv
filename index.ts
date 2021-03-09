@@ -36,7 +36,7 @@ const info = require("./user_info");
 
 app.post("/register", (req, res) => {
   console.log(req.body);
-  const { username, password, firstname, lastname, balance } = req.body;
+  const { username, password, firstname, lastname, balance } = req.body
   if (
     username !== undefined &&
     password !== undefined &&
@@ -51,11 +51,11 @@ app.post("/register", (req, res) => {
       balance: balance
     };
     info.info.push(newInfo);
-    res.status(200).send({ success: true, message: "Register successfully" });
+    res.status(200).send({ success: true, message: "Register successfully" })
   }else{
-    res . status ( 400 ) . send ( {  success : false ,  message: "Username is already in used"  } ) ;
+    res . status ( 400 ) . send ( {  success : false ,  message: "Username is already in used"  } ) 
   }
-});
+})
 
 app.post('/login',
   (req, res) => {
