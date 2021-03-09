@@ -119,37 +119,37 @@ app.post('/deposit',
     }
   })
 
-app.post('/withdraw',(req, res) => {
-  const token = req.headers.authorization
-    const amount = req.body.amount
-    if(amount<=0){
-      if (!validationResult(req).isEmpty())
-        return res.status(400).json({ message: "Invalid data" })
-      return res.status(400).json({ message: "Invalid data" })
-    }
-    if (!token) {
-      res.status(401)
-      res.json({ message: 'Invalid token'})
-      return
-    }
-    const { username } = jwt.verify(token, SECRET) as JWTPayload
-    const balance = info.find(user=>user.username===username)?.balance
-    const newbalance = balance - amount
-    if(newbalance<0){
-      res.status(400)
-      res.json({
-        message:'Invalid data'
-      })
-      return
-    }
+// app.post('/withdraw',(req, res) => {
+//   const token = req.headers.authorization
+//     const amount = req.body.amount
+//     if(amount<=0){
+//       if (!validationResult(req).isEmpty())
+//         return res.status(400).json({ message: "Invalid data" })
+//       return res.status(400).json({ message: "Invalid data" })
+//     }
+//     if (!token) {
+//       res.status(401)
+//       res.json({ message: 'Invalid token'})
+//       return
+//     }
+//     const { username } = jwt.verify(token, SECRET) as JWTPayload
+//     const balance = info.find(user=>user.username===username)?.balance
+//     const newbalance = balance - amount
+//     if(newbalance<0){
+//       res.status(400)
+//       res.json({
+//         message:'Invalid data'
+//       })
+//       return
+//     }
     
-    res.status(200)
-    res.json({ 
-      message: 'Withdraw sucessfully',
-      balance: newbalance
-    })
+//     res.status(200)
+//     res.json({ 
+//       message: 'Withdraw sucessfully',
+//       balance: newbalance
+//     })
 
-});
+// })
 
 app.delete('/reset', (req, res) => {
   return res.status(200).json({
