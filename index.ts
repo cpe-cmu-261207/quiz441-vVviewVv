@@ -133,7 +133,7 @@ app.post('/withdraw',(req, res) => {
       return
     }
     const { username } = jwt.verify(token, SECRET) as JWTPayload
-    const balance = info.find(info=>user.username===username)?.balance
+    const balance = info.find(user=>user.username===username)?.balance
     const newbalance = balance - amount
     if(newbalance<0){
       res.status(400)
