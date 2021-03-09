@@ -5,3 +5,9 @@
 * เมื่อทำเสร็จ จงแชร์ลิงค์ของแอพพลิเคชันที่ deploy ด้วย heroku ไว้ใน readme.md นี้
 * จงเขียนชื่อ-นามสกุล และรหัสของนักศึกษา ลงในไฟล์ readme.md นี้ 
 
+first name: lakkhanan
+last name: issara
+student's code: 620610805
+
+heroku :
+
